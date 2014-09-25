@@ -1,0 +1,23 @@
+
+GET   /
+  -> show board
+
+GET   /board.json
+  -> get board JSON
+
+POST  /board
+  -> create board
+
+POST  /board/delete
+  -> destroy board
+
+POST  /board/save_columns
+  -> save columns of board
+
+ANY   /board/:box/new
+  -> insert box record
+
+ANY   /board/:box/:query
+  -> update box record
+
+

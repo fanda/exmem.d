@@ -1,0 +1,13 @@
+{
+    "name": "exmem.org",
+    "version": "0.1.1",
+    "description": "ExternMemory.Organized",
+    "homepage": "http://example.org",
+    "copyright": "Copyright © 2013, fanda",
+    "authors": [
+        "fanda"
+    ],
+    "dependencies": {
+        "vibe-d": ">=0.7.13"
+    }
+}

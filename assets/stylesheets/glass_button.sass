@@ -1,0 +1,49 @@
+$add_box_button_size: 40px
+
+$g_box_shadow: 0 0 5px 2px rgba(255,255,255,.4) inset,0 2px 5px rgba(0,0,0,.33),0 0 20px rgba(255,255,255,.8)
+$g_text_shadow: 1px 1px 0 rgba(255,255,255,.33),-1px -1px 0 rgba(120,165,200,0.5)
+$g_border_radius: 4px
+
+.gbtn, #add_box_button
+  cursor: pointer
+  text-decoration: none
+  position: fixed
+  top: $header_height + 11px
+  right: 19px
+  line-height: $add_box_button_size * 2 / 3
+  padding: $add_box_button_size / 4
+  border: none
+  font-family: Arial, Helvetica, sans-serif
+  font-size: $add_box_button_size
+
+  color: #78879D
+  color: rgb(133,158,184)
+  color: rgba(79,95,117,.5)
+  letter-spacing: 1px
+
+  -webkit-text-shadow: $g_text_shadow
+  -moz-text-shadow: $g_text_shadow
+  -o-text-shadow: $g_text_shadow
+  text-shadow: $g_text_shadow
+
+  -webkit-border-radius: $g_border_radius
+  -moz-border-radius: $g_border_radius
+  -o-border-radius: $g_border_radius
+  border-radius: $g_border_radius
+
+  -webkit-box-shadow: $g_box_shadow
+  -moz-box-shadow: $g_box_shadow
+  -o-box-shadow: $g_box_shadow
+  box-shadow: $g_box_shadow
+
+  background-color: #BCCFDF
+
+  background-image: linear-gradient(top, rgba(255,255,255,.33) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%),linear-gradient(left , rgb(150,195,230) 0%, rgb(201,203,213) 50%, rgb(225,207,205) 80%)
+  background-image: -o-linear-gradient(top, rgba(255,255,255,.33) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%),-o-linear-gradient(left , rgb(150,195,230) 0%, rgb(201,203,213) 50%, rgb(225,207,205) 80%)
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,.33) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%),-moz-linear-gradient(left , rgb(150,195,230) 0%, rgb(201,203,213) 50%, rgb(225,207,205) 80%)
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,.33) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%),-webkit-linear-gradient(left , rgb(150,195,230) 0%, rgb(201,203,213) 50%, rgb(225,207,205) 80%)
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,.33) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%),-ms-linear-gradient(left , rgb(150,195,230) 0%, rgb(201,203,213) 50%, rgb(225,207,205) 80%)
+  background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0,rgba(255,255,255,.33)), color-stop(.5,rgba(255,255,255,0.5)), color-stop(.5,rgba(255,255,255,0)), color-stop(1,rgba(255,255,255,0.1))),-webkit-gradient(linear,left top, right top, color-stop(0, rgb(150,195,230)), color-stop(0.5, rgb(201,203,213)), color-stop(0.8, rgb(225,207,205)))
+
+  &:hover, &.nodec
+    box-shadow: none

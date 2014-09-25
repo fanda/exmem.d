@@ -1,0 +1,73 @@
+can.route('board/:action')
+
+window.ControlApp = can.Control({
+
+  init: (el, opt) ->
+    @opt = opt
+    @element = el
+    $(window).scroll(sticky)
+    $(window).resize(sticky)
+    $(".column").sortable({connectWith:".column"}).bind("sortstop", (ev, el) ->
+      data = []
+      $(".column").each( () ->
+        data.push($(this).sortable('toArray'))
+      )
+      post('/board/save_columns', data)
+    )
+    addUI($(".box"))
+    $('#new_board_form input[title]').inputHints()
+
+    return
+
+  new_board: () ->
+    board_name = prompt('What is the new board name?')
+    $("#board")[0].selectedIndex = 0
+    return if board_name == null or board_name == ''
+    url = '/board'
+    $.ajax({
+      url: url
+      type: 'POST'
+      data: {name: board_name}
+      success: () ->
+        window.location = "!"
+        window.location.href = "!"
+      error: () ->
+        alert("Cannot create board")
+    })
+
+  remove_board: () ->
+    if confirm('All on board will be removed. Are you sure?')
+      $.ajax({
+        url: '/board/{id}'
+        type: 'DELETE'
+      })
+    $("#board")[0].selectedIndex = 0
+
+  'select.menu change': (el, ev) ->
+    val = el.val()
+    if val[0] == '!' and val.length > 1
+      eval('this.'+val.replace('!','')+'();')
+    else if val?
+      window.location.href = val
+      window.location = val
+
+  '.btn-rm-box click': (el, ev) ->
+    column = el.parents('.column')
+    el.parents('.box').fadeOut('normal', ->
+      $(this).remove()
+      column.trigger('sortstop')
+    )
+
+
+  '#add_box_button click': (el, ev) ->
+    temp_id = generateWord(11)
+    @element.find('.column').last().prepend(
+      JST["javascripts/templates/dbox"]({ id: temp_id })
+    )
+    @element.find('#'+temp_id).html(
+      JST["javascripts/templates/box"]({ title: 'Čerstvý box' })
+    )
+    addUI(@element.find('#'+temp_id)).addClass('white')
+    # XXX -> Controller
+
+})

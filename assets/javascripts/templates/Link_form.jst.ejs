@@ -1,0 +1,21 @@
+<form class="link" id="formLink">
+  <p>
+  <label class="string input required" id="link_title_input"> Titulek
+    <input id="link_title" maxlength="255" name="Link[title]" type="text" value="<%= item.title %>" />
+  </label>
+  </p><p>
+  <label class="url input required" id="link_url_input"> Odkaz
+    <input id="link_url" maxlength="255" name="Link[url]" type="url" value="<%= item.url %>" />
+  </label>
+  </p>
+
+  <div class="tar submit"><button>Uložit</button></div>
+
+  <label class="text input" id="link_about_input"> Text k tomu
+  <p>
+    <textarea id="link_about" name="Link[about]" rows="20">
+      <%= item.about %>
+    </textarea>
+  </p>
+  </label>
+</form>

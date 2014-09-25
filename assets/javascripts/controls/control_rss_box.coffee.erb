@@ -1,0 +1,27 @@
+window.ControlRSSBox = can.Control({
+
+  init: (el, opt) ->
+    @opt = opt
+    @element.find('.ebox').find('textarea,input[title]').inputHints()
+    @content = @element.find('.rssbox')
+    @content.rssfeed(@content.text(), { limit: 5 })
+    return
+
+  ".btn-ebox click": (el, ev) ->
+    if el.hasClass('show')
+      @element.find('.ebox').show('fast')
+    else
+      @element.find('.ebox').hide('fast')
+    el.toggleClass('show')
+
+  ".ebox .colour change": (el, ev) ->
+    @element.attr('class', '').addClass('box '+el.val())
+    url = '/boards/save_colours'
+
+    $.post(url, {column: @element.attr('id'), colour: el.val()}, null, "json")
+
+  ".ebox .rss submit": (el, ev) ->
+    alert('submitt = ')
+
+
+})

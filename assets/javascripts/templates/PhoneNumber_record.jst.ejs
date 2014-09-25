@@ -1,0 +1,16 @@
+<div class="slider-content">
+  <ul>
+  <% $.each( items, function(key, values) { %>
+    <li id="<%= key %>">
+      <a name="<%= key %>" class="title"><%= key %></a>
+      <ul>
+        <% $.each( values, function(i, item) { %>
+          <li>
+            <span><%= item.name %></span><br/><em><%= item.number %></em>
+          </li>
+        <% }) %>
+      </ul>
+    </li>
+  <% }) %>
+  </ul>
+</div>

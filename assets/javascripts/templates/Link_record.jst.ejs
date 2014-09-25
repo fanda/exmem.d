@@ -1,0 +1,20 @@
+<div class="slider-content">
+  <ul>
+  <% $.each( items, function(key, values) { %>
+    <li id="<%= key %>">
+      <a name="<%= key %>" class="title"><%= key %></a>
+      <ul>
+        <% $.each( values, function(i, item) { %>
+          <li>
+            <a target="_blank" href="<%= item.url %>"><%= item.title %></a>
+            <% if(item.about) { %>
+              <br/>
+              <em><%= item.about %></em>
+            <% } %>
+          </li>
+        <% }) %>
+      </ul>
+    </li>
+  <% }) %>
+  </ul>
+</div>

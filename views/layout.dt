@@ -1,0 +1,37 @@
+!!! 5
+html
+	head
+		title ExMem.Org
+
+		meta(name="viewport", content="width = device-width, user-scalable = yes, maximum-scale = 1.0")
+		link(rel="stylesheet", href="http://localhost:9292/assets/stylesheets/application.css", type="text/css")
+		script(type="text/javascript", src="http://localhost:9292/assets/javascripts/application.js")
+	body
+		header
+			h1.dib.left
+				a(href="/") EXternMEMory.ORGanized
+			div.right
+				select.menu
+					option(value = "!") Jazyk
+					option(value = "?l=en") English
+					option(value = "?l=cz") Česky
+				select.menu#board
+					option(value = "!") .board
+					option(disabled = "disabled")
+					option(value = "!new_board") .new_board
+					option(value = "!remove_board") .remove_board
+				select.menu
+					option(value = "!") .settings
+					option(disabled = "disabled") .change_background
+					option(disabled = "disabled") .change_boxstyle
+					option(disabled = "disabled") .change_user
+				select.menu
+					option(value = "!") current_user.email
+					option(value = "/logout") signout
+				span Sign in with:
+			.out
+
+		#container
+			block body
+
+		#add_box_button +
